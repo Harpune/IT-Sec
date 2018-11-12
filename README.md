@@ -1,3 +1,3 @@
 # IT-Sec
 
-- Aufgabe 1 (in Arbeit#hack56)
+- Aufgabe 1 (in Arbeit)
