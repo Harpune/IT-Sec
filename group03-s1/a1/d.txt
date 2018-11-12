@@ -1,0 +1,16 @@
+Decrypt a-enc-aes.txt with AES cipher with key size 256 in CBC-mode:
+$ openssl enc -d -aes-256-cbc -in a-enc-aes.txt -out plaintext.txt
+
+-d:		Decrypt option (-e encrypt is default)
+-in:		Encrypted file
+-out:		Outputfile
+
+
+Decrypt b-enc-rsa.txt using the private key:
+$ openssl rsautl -decrypt -inkey b-rsakey.txt -in b-enc-rsa.txt -out plaintext.txt
+
+-inkey: 	File with the private key
+-in: 		File with encrypted text
+-out:		Outputfile with decrypted text
+
+

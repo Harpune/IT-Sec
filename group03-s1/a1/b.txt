@@ -1,0 +1,11 @@
+Generate private key with aes256-encryption:
+$ openssl genrsa -aes256 -out privatekey.txt 2024
+
+Generate public key from private key in privatekey.txt into publickey.txt:
+$ openssl rsa -in privatekey.txt -pubout -out publickey.txt
+
+Merge private key and public key into one file and delete both:
+$ cat privatekey.txt publickey.txt > b-rsakey.txt && rm privatekey.txt publickey.txt
+
+Encrypt plaintext.txt using public key in b-rsakey.txt and write into b-enc-rsa.txt:
+$ openssl rsautl -encrypt -pubin -inkey b-rsakey.txt -in plaintext.txt -out b-enc-rsa.txt

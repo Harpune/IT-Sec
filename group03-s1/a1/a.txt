@@ -1,0 +1,3 @@
+Encrypt the names in "plaintext.txt" (-in) with openssl using the aes-256-cbc algorithm into an a-enc-aes.txt (-out) and print the key, initialization vector and salt value (-p):
+$ openssl enc -aes-256-cbc -p -in plaintext.txt -out a-enc-aes.txt
+
