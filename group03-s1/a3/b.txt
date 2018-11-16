@@ -1,0 +1,3 @@
+Run the python-script hash.py and give it the plaintext.txt as argument. Write the result into b-hash.txt.
+
+$ python hash.py plaintext.txt > b-hash.txt
