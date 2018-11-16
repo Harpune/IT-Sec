@@ -1,0 +1,5 @@
+Pipe the content of plaintext.txt into sha1sum (sha-1) and write it afterwards into the a-sha1.txt.
+$ cat plaintext.txt | sha1sum > a-sha1.txt
+
+Same as above but with sha256sum (sha-2).
+$ cat plaintext.txt | sha256sum > a-sha2.txt
