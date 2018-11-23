@@ -1,0 +1,26 @@
+ - If only Alice has some type of secret/private key, can she use it to give Bob her secret message?
+
+AES: Yes, if Bob has the same key.
+
+RSA: No, because Bob would need the private key.
+
+
+- If only Bob has some type of secret/private key, can Alice use it to give Bob her secret message?
+
+AES: Yes, if Bob has the same key.
+
+RSA: Yes, Bob can decrypt the message with his secret key.
+
+
+- If Alice and Bob have a key of the same type, does the situation change?
+
+AES: No.
+
+RSA: Yes. For RSA there is a need for public and private key.
+
+
+- Additionally, when Mallory, an active attacker that can modify and destroy messages at will, joins, can we
+still build a secure system?
+
+Yes (securerer). Use AES to encrypt the message and use RSA to send the key with the private key of the receiver. 
+So Mallory needs to have the secret key of the receiver to decrypt the key and furthermore he needs the encrypted message.
