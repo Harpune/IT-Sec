@@ -1,0 +1,2 @@
+The brigde-function can not be implemented as descritpted, because its not possible to restrict the unix permissions of a group or person which is not 
+the group of the file or the owner or any other owner
