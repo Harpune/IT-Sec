@@ -1,0 +1,48 @@
+Stage1: Passwort des zip-Archives knacken
+fcrackzip -b -u -l 3-5 -c a vs-itsec.zip
+Passwort: shiny
+
+Stage2: Den Schluessel fuer den WEP-Trace finden 
+aitcrack-ng <file> liefert den Schluessel (31:74:24:65:63)
+
+Stage3: File mit Schluessel aus Stage2 entschluessseln
+Man findet in einer der entschluessselten Zeilen Nutzername und Passwort eines Twiiter-Accounts
+User: maltemaster Password:$uperPa$$wort
+
+Stage4: Private Nachrichten des Twitter-Accounts
+Dort findet man den Hinweis auf die Website: awww.lxd-vs.uni-ulm.de
+
+Stage5:Directory traversal attack auf die in Stage4 gefundene Website 
+Man findet unter awww.lxd-vs.uni-ulm.de/resources/secret-binaries/passwordManager einen Download 
+
+Stage6:Dem passwordmanager die Passwoeter entlocken
+Man decompiliert den passwordManager und bekommt das WLAN-Passwort fuer das angegebene WLAN vs-itsec2018
+Passwort ist Yesyesth1si5aFertileLand
+
+Stage7:Ins WLAN einloggen
+Man verbindet sich mit dem WLAN und scannt mit nmap das Netzwerk und findet eine Website 192.168.1.138
+
+Stage8:Die Website 
+Auf der Website befindet sich ein Login welches man mit einer SQL-Inqection umgehen kann 
+Name: "or""="
+Passwort: "or""="
+Man bekommt einen Usernamen (bonbon) und ein Passwort (au$wur5t) angezeigt 
+Man sieht einen C-Code als Hilfestellung
+
+Stage9:SSH 
+Man kann sich mit dem im Stage8 erhaltenen Login per ssh mit 192.168.1.138 verbinden
+Dort liegt ein Executable welches den C-Code den man in Stage8 zu sehen bekommt ausfuehrt
+
+Stage10:Die Executable ausfuehren 
+Die Executable liest 32 zeichen schneidet das letzte ab und vergleicht den sha256-hash der Eingabe mit einem gespeicherten hash
+Da zum uebertragen des gelesenen String strcpy() verwendet wird bietet sich ein BufferOverflow an
+Man uebergibt der Executable 31-Zeichen + eine beliebiges Zeichen (ungleich 0) + dem Hash aus den ersten 31-Zeichen
+Ruft man die Executable dann wie folgt aus oeffnt sich eine root-bash
+./webmasterLogin $(perl -e 'print "b"x32 . "\xdd\x49\x26\x6d\x07\xcc\xd5\x91\x58\xe5\xb4\xbf\x49\xcb\x10\x46\xc0\x13\x5e\x6d\x8b\x59\x93\xbc\x9e\xb1\xfa\x4f\xac\x35\x68\x05"')
+
+Stage11:WinnerWinnerChickenDinner
+man navigiert sich zu winnertable.html
+cd /
+find -name winnertable.html
+cd /srv/itsec
+und dort traegt man sich in die winnertable ein 
