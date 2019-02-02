@@ -1,0 +1,6 @@
+stack4.c fuellt, bei richtiger Verwendung, den 'buffer' und ueberschreibt 'fp' mit der Adresse von 'win()'
+
+Verwendung:
+objdump -d /opt/protostar/bin/stack3 (dort kann die Speicheradresse von 'win()' ausgelesen und in den Code eingefuegt werden)
+gcc -std=c99 -o stack4 stack4.c
+./stack4 | /opt/protostar/bin/stack3

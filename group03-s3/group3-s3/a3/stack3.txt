@@ -1,0 +1,7 @@
+stack3.c erzeugt bei richtiger Verwendung eine Zeichenkette, die wenn man sie als Variable speichert und dem Code uebergibt, den 'buffer' fuellt und das notwendige Passwort in 'modified' schreibt (umgedrehte Reihenfolge beachten)
+
+Verwendung:
+gcc -std=c99 -o stack3 stack3.c
+GREENIE = $(./stack3)
+export GREENIE
+/opt/protostar/bin/stack2

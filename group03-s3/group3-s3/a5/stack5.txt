@@ -1,0 +1,8 @@
+stack5.c fuellt, bei richtiger Verwendung, den 'buffer' und ueberschreibt noch etwas mehr, bis die Ruecksprungadresse mit der Adresse von 'win()' ueberschrieben wird
+
+Verwendung:
+objdump -d /opt/protostar/bin/stack4 (Adresse von 'win()' rausfinden und im Code eintragen)
+gcc -std=c99 -o stack5 stack5.c
+./stack5 | /opt/protostar/bin/stack4
+
+wir haben durch reines brutforcen herausgefunden, dass wir 12 Zeichen mehr als den 'buffer' ueberschrieben muessen

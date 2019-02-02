@@ -1,0 +1,5 @@
+stack2.c erzeugt bei richtiger Verwendung eine Zeichenkette, die den 'buffer' fuehlt. Die anschliessenden Zeichen werden in modified geschrieben (umgedrehte Reihenfolge wichtig).
+
+Verwendung:
+gcc -std=c99 -o stack2 stack2.c
+/opt/protostar/bin/stack1 $(./stack2)

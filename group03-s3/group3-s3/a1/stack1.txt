@@ -1,0 +1,5 @@
+stack1.c erzeugt bei richtiger Verwendung eine Zeichenkette, die ueber den buffer hinaus schreibt und deshalb 'modified' ueberschreibt.
+
+Verwendung:
+gcc -std=c99 -o stack1 stack1.c
+./stack1 | /opt/protostar/bin/stack0
