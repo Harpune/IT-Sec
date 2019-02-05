@@ -3,10 +3,10 @@ fcrackzip -b -u -l 3-5 -c a vs-itsec.zip
 Passwort: shiny
 
 Stage2: Den Schluessel fuer den WEP-Trace finden 
-aitcrack-ng <file> liefert den Schluessel (31:74:24:65:63)
+aircrack-ng <file> liefert den Schluessel (31:74:24:65:63)
 
 Stage3: File mit Schluessel aus Stage2 entschluessseln
-Man findet in einer der entschluessselten Zeilen Nutzername und Passwort eines Twiiter-Accounts
+Man findet in einer der entschluessselten Zeilen Nutzername und Passwort eines Twitter-Accounts
 User: maltemaster Password:$uperPa$$wort
 
 Stage4: Private Nachrichten des Twitter-Accounts
