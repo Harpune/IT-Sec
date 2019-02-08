@@ -1,0 +1,16 @@
+Stage1: Die .7z-Datei entschluesseln
+Der Hinweis 'passw0rd' war gegeben zusammen mit einem link zu einem md5-Generator.
+Mit der md5-sum des Hinweis laesst sich dann der Ordner entschluesseln
+
+Stage2: Der RSA-Key 
+Ein Teil der Kommunikation ist verschluesselt, der Rest ist aber lesbar. 
+Man folgt dem TCP-Stream des ersten Packets und findet die Uebertragung eines 'key.zip'
+Dann scrollt man an die Stelle der Datenuebertragung (Packet 55) und folgt dem TCP-Stream, den Speicher den raw-Output als key.zip
+Diese Datei kann man nun entpacken und den Schluessel in Wireshrak als Key hinzufuegen
+
+Stage3: Die Flag
+Nach dem man den Schluessel hinzugefiegt hat sieht man noch wesentlich mehr
+So befindet sich in packet 91 die HTTP-Request fuer flag.jpg
+An dieser Stelle folgt man dem SSL-Stream und schraenkt die Uebertragung auf den Teil vom Server an den Client ein
+Der raw-Output laesst sich als flag.jpg speichern
+Anschliessend muss man noch den HTTP-Header entfernen bevor man sich den Hai aus Draht angucken kann
